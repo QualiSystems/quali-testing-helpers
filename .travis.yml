@@ -6,7 +6,6 @@ install:
     - bash ./install_dependencies.sh
 
 script:
-    - python runtests.py --with-coverage  --cover-package=quali
     - python setup.py test
     - python setup.py sdist --format zip
 
