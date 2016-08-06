@@ -1,0 +1,14 @@
+language: python
+python:
+    - "2.7"
+
+install:
+    - bash ./install_dependencies.sh
+
+script:
+    - python runtests.py --with-coverage  --cover-package=quali
+    - python setup.py test
+    - python setup.py sdist --format zip
+
+after_success:
+    coveralls
